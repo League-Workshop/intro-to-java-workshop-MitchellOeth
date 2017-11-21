@@ -18,16 +18,19 @@ public class SpeakAndSpell {
 
 	public static void main(String[] args) {
 		// 1. Use the speak method to say the word. "e.g. spell mandlebrot"
-
-		// 2. Catch the user's answer in a String
-
+speak("spell mandlebrot");
+		//2. Catch the user's answer in a String
+String answer=JOptionPane.showInputDialog(null,"Spell");
 		// 3. If the user spelled the word correctly, speak "correct"
-
+if(answer.equalsIgnoreCase("mandlebrot")) {
+	JOptionPane.showMessageDialog(null,"correct");
+}
 		// 4. Otherwise say "wrong"
-
+else {
+	JOptionPane.showMessageDialog(null,"Wrong");
+}
 		// 5. repeat the process for other words
-		
-	}
+	}		
 
 	static void speak(String words) {
 		Voice voice = VoiceManager.getInstance().getVoice("kevin16");
@@ -35,7 +38,4 @@ public class SpeakAndSpell {
 		voice.speak(words);
 		voice.deallocate();
 	}
-
 }
-
-
